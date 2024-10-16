@@ -1,15 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet, ImageBackground, Image, TouchableOpacity } from 'react-native';
 
-const Screen1 = () => {
+const Screen1 = ({ navigation }) => {
+  const handleGetStarted = () => {
+    navigation.navigate('Screen2'); // Navigate to Screen2
+  };
+
   return (
     <ImageBackground 
-      source={require('../assets/8140 1.png')} // Đường dẫn đến ảnh nền
+      source={require('../assets/8140 1.png')} // Background image path
       style={styles.background}
     >
       <View style={styles.container}>
         <Image 
-          source={require('../assets/Group.png')} // Đường dẫn đến ảnh của bạn
+          source={require('../assets/Group.png')} // Your image path
           style={styles.image} 
         />
         <Text style={styles.title}>
@@ -18,8 +22,8 @@ const Screen1 = () => {
         <Text style={styles.subtitle}>Get your groceries in as fast as one hour</Text>
       </View>
 
-      {/* Nút "Get Started" */}
-      <TouchableOpacity style={styles.button}>
+      {/* Get Started Button */}
+      <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
     </ImageBackground>
@@ -29,48 +33,48 @@ const Screen1 = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: 'center', // Căn giữa nội dung theo chiều dọc
-    alignItems: 'center', // Căn giữa nội dung theo chiều ngang
+    justifyContent: 'center', // Center content vertically
+    alignItems: 'center', // Center content horizontally
   },
   container: {
-    alignItems: 'center', // Căn giữa nội dung theo chiều ngang
+    alignItems: 'center', // Center content horizontally
   },
   image: {
-    width: 48, // Chiều rộng của ảnh
-    height: 56, // Chiều cao của ảnh
+    width: 48, // Image width
+    height: 56, // Image height
     top: 125,
-    resizeMode: 'contain', // Giữ tỉ lệ ảnh
+    resizeMode: 'contain', // Maintain aspect ratio
   },
   title: {
-    fontSize: 40, // Kích thước chữ cho tiêu đề
-    fontWeight: '600', // Đậm chữ
-    color: '#fff', // Màu chữ
-    marginTop: 20, // Khoảng cách trên tiêu đề
-    textAlign: 'center', // Căn giữa chữ
+    fontSize: 40, // Title font size
+    fontWeight: '600', // Bold font
+    color: '#fff', // Text color
+    marginTop: 20, // Top margin for title
+    textAlign: 'center', // Center text
     top: 120,
-    fontFamily: 'Gilroy', // Sử dụng font Gilroy
+    fontFamily: 'Gilroy', // Use Gilroy font
   },
   subtitle: {
-    fontSize: 16, // Kích thước chữ cho giới thiệu
-    color: '#fff', // Màu chữ
-    textAlign: 'center', // Căn giữa chữ
+    fontSize: 16, // Subtitle font size
+    color: '#fff', // Text color
+    textAlign: 'center', // Center text
     top: 130,
     fontWeight: '200',
-    fontFamily: 'Gilroy', // Sử dụng font Gilroy
+    fontFamily: 'Gilroy', // Use Gilroy font
   },
   button: {
-    backgroundColor: '#53b175', // Màu nền của nút
-    paddingVertical: 15, // Khoảng cách dọc trong nút
-    paddingHorizontal: 100, // Khoảng cách ngang trong nút
-    borderRadius: 10, // Bo tròn góc
-    position: 'absolute', // Đặt nút ở vị trí cố định
-    bottom: 40, // Khoảng cách từ đáy
+    backgroundColor: '#53b175', // Button background color
+    paddingVertical: 15, // Vertical padding in button
+    paddingHorizontal: 100, // Horizontal padding in button
+    borderRadius: 10, // Rounded corners
+    position: 'absolute', // Fixed position for button
+    bottom: 40, // Bottom margin
   },
   buttonText: {
-    color: '#fff', // Màu chữ trong nút
-    fontSize: 18, // Kích thước chữ
-    fontWeight: '400', // Đậm chữ
-    fontFamily: 'Gilroy', // Sử dụng font Gilroy
+    color: '#fff', // Button text color
+    fontSize: 18, // Font size for button text
+    fontWeight: '400', // Button text weight
+    fontFamily: 'Gilroy', // Use Gilroy font
   },
 });
 
