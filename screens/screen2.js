@@ -89,11 +89,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   socialMediaText: {
-    marginTop: 16,
+    marginTop: 26,
     textAlign: 'center',
     fontSize: 16,
     color: '#828282',
     alignSelf: 'center',
+    marginBottom: 20
   },
   socialButton: {
     flexDirection: 'row',
@@ -101,8 +102,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#ddd',
-    borderRadius: 8,
-    paddingVertical: 10,
+    borderRadius: 19,
+    paddingVertical: 15,
     paddingHorizontal: 20,
     width: '90%',
     alignSelf: 'center',
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: 22,
-    height: 24,
+    height: 23,
     marginRight: 10,
   },
   icon1: {
@@ -127,6 +128,7 @@ const styles = StyleSheet.create({
   socialButtonText: {
     fontSize: 16,
     color: '#fff', // Màu chữ của nút Google (đen)
+    fontWeight: '500'
   },
   facebookButtonText: {
     color: '#fff', // Màu chữ của nút Facebook (trắng)
